@@ -7,7 +7,12 @@ public class Problem2 {
         int pos = 1;
         ListNode current = head;
         ListNode newNode = new ListNode(val);
-        while (current.next!=null && pos<position){
+        if(position == 1){
+            newNode.next = head;
+            head = newNode;
+            return head;
+        }
+        while (current.next!=null && pos<position-1){
             current = current.next;
             pos++;
         }
